@@ -104,7 +104,3 @@ path/to/directory/subdirectory/file2.csv: (440,195)
 ## Contributing
 
 Contributions to `csvshape` are welcome! Feel free to fork the repository and submit pull requests.
-
----
-
-This README now includes instructions and examples for the recursive search feature, making it comprehensive and user-friendly.
