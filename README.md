@@ -1,7 +1,7 @@
 # csvshape
-A simple CLI to show CSV shapes.
+A simple CLI to show csv shapes (rows, cols).
 
-`csvshape` is a command-line utility that helps you quickly find the dimensions (number of rows and columns) of CSV files in a directory or matching a specified pattern, with optional support for recursive search.
+`csvshape` is a command-line utility that helps you quickly find the dimensions (number of rows and columns) of CSV files in a directory or matching a pattern. It's useful for getting an overview of a directory with many csv files, and you don't want to load them up individually in pandas or some other tool. 
 
 ## Installation
 
