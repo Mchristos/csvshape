@@ -5,15 +5,28 @@ calculate_csv_shape() {
 }
 
 csvshape() {
+    local recursive=0
+
+    if [ "$1" = "-r" ]; then
+        recursive=1
+        shift
+    fi
+
     if [ "$#" -eq 0 ]; then
         set -- "."
     fi
 
     for arg in "$@"; do
         if [ -d "$arg" ]; then
-            for file in "$arg"/*.csv; do
-                calculate_csv_shape "$file"
-            done
+            if [ "$recursive" -eq 1 ]; then
+                find "$arg" -name '*.csv' -type f | while read -r file; do
+                    calculate_csv_shape "$file"
+                done
+            else
+                for file in "$arg"/*.csv; do
+                    calculate_csv_shape "$file"
+                done
+            fi
         elif [ -f "$arg" ]; then
             calculate_csv_shape "$arg"
         else
@@ -23,4 +36,3 @@ csvshape() {
         fi
     done
 }
-
